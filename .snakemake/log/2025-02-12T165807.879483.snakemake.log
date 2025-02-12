@@ -1,0 +1,40 @@
+host: ITSupports-MacBook-Pro.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+plot         1
+total        2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Feb 12 16:58:07 2025]
+localrule plot:
+    input: data/processed_data.csv
+    output: figures/plot.png
+    jobid: 4
+    reason: Missing output files: figures/plot.png
+    resources: tmpdir=/var/folders/_f/0kqrxwdn69vgvgb02z2m3kqc0000gp/T
+
+[Wed Feb 12 16:58:08 2025]
+Finished job 4.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Feb 12 16:58:08 2025]
+localrule all:
+    input: data/report.csv, figures/plot.png
+    jobid: 0
+    reason: Input files updated by another job: figures/plot.png
+    resources: tmpdir=/var/folders/_f/0kqrxwdn69vgvgb02z2m3kqc0000gp/T
+
+[Wed Feb 12 16:58:08 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-02-12T165807.879483.snakemake.log

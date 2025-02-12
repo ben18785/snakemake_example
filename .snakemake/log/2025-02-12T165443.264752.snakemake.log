@@ -1,0 +1,36 @@
+host: ITSupports-MacBook-Pro.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+plot         1
+total        2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Feb 12 16:54:43 2025]
+localrule plot:
+    input: data/processed_data.csv
+    output: figures/plot.png
+    jobid: 4
+    reason: Missing output files: figures/plot.png
+    resources: tmpdir=/var/folders/_f/0kqrxwdn69vgvgb02z2m3kqc0000gp/T
+
+Terminating processes on user request, this might take some time.
+[Wed Feb 12 16:54:43 2025]
+Error in rule plot:
+    jobid: 4
+    input: data/processed_data.csv
+    output: figures/plot.png
+    shell:
+        python scripts/plot_data.py
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2025-02-12T165443.264752.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
